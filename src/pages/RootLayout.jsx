@@ -5,13 +5,15 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { FiSettings } from 'react-icons/fi'
 import { useStateContext } from '../contexts/ContextProvider';
 const RootLayout = () => {
-    const { activeMenu } = useStateContext()
+    const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } = useStateContext()
     return (
-        <div>
+        <div className={currentMode === 'Dark' ? 'dark' : ''}>
             <div className="flex relative dark:bg-main-dark-bg">
                 <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }} >
                     <TooltipComponent content="Setting" position="TopCenter">
-                        <button type='button' className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white' style={{ background: 'blue', borderRadius: '50%' }} >
+                        <button type='button'
+                            onClick={() => setThemeSettings(true)}
+                            className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white' style={{ background: currentColor, borderRadius: '50%' }} >
                             <FiSettings />
                         </button>
                     </TooltipComponent>
@@ -33,6 +35,7 @@ const RootLayout = () => {
                         <Navbar />
                     </div>
                     <div>
+                        {themeSettings && <ThemeSettings />}
                         <Outlet />
                     </div>
                     {/* <Footer /> */}

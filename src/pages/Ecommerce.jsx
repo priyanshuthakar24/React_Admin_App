@@ -9,6 +9,7 @@ import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropd
 import { useStateContext } from '../contexts/ContextProvider';
 import product9 from '../data/product9.jpg';
 const Ecommerce = () => {
+    const { currentColor } = useStateContext()
     return (
         <div className="mt-12">
             <div className='flex flex-wrap lg:flex-nowrap justify-center'>
@@ -22,7 +23,7 @@ const Ecommerce = () => {
                     <div className='mt-6
                     '>
                         <Button color="white"
-                            bgColor="blue"
+                            bgColor={currentColor}
                             text='Download'
                             borderRadius='10px'
                             size='md' />
@@ -47,7 +48,7 @@ const Ecommerce = () => {
             {/* revenu update section  */}
             <div className='flex gap10 flex-wrap justify-center'>
 
-                <div className="bg-white dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780">
+                <div className="bg-white dark:bg-secondary-dark-bg dark:text-white m-3 p-4 rounded-2xl md:w-780">
                     {/* revenu update headinf section   */}
                     <div className="flex justify-between">
                         <p className='font-semibold text-xl'>Revenue Updates</p>
@@ -88,19 +89,19 @@ const Ecommerce = () => {
 
                             <div className='mt-5'>
                                 <SparkLine
-                                    currentColor="blue"
+                                    currentColor={currentColor}
                                     id='line-sparkline'
                                     type='Line'
                                     height="80px"
                                     width="250px"
                                     data={SparklineAreaData}
-                                    color="blue"
+                                    color={currentColor}
                                 />
                             </div>
                             {/* button component  */}
                             <div className="mt-10">
                                 <Button color="white"
-                                    bgColor="blue"
+                                    bgColor={currentColor}
                                     text='Download and Export'
                                     borderRadius="10px"
                                 />

@@ -21,7 +21,7 @@ const NavButton = ({ title, customfun, icon, color, dotColor }) => (
 const Navbar = () => {
 
     // context calling 
-    const { activeMenu, setActiveMenu, isClicked, seIsClicked, handleClick, screenSize, setScreenSize } = useStateContext();
+    const { activeMenu, setActiveMenu, isClicked, setisClicked, handleClick, screenSize, setScreenSize, currentColor, user, setuser } = useStateContext();
 
     // useEffect calling for calculating the size  of the window 
     useEffect(() => {
@@ -42,25 +42,25 @@ const Navbar = () => {
     // return statement 
     return (
         <div className='flex justify-between p-2 md:mx-6 relative'>
-            <NavButton title='Menu' customfun={() => setActiveMenu((preActiveMenu) => !preActiveMenu)} color="blue" icon={<AiOutlineMenu />} />
+            <NavButton title='Menu' customfun={() => setActiveMenu((preActiveMenu) => !preActiveMenu)} color={currentColor} icon={<AiOutlineMenu />} />
 
             <div className='flex'>
                 <NavButton
                     title='Cart'
-                    customfun={() => handleClick('cart')} color="blue"
+                    customfun={() => setisClicked({ cart: !isClicked.cart })} color={currentColor}
                     icon={<FiShoppingCart />} />
                 <NavButton
                     title='Chat'
                     dotColor="#03C9D7"
-                    customfun={() => handleClick('chat')} color="blue"
+                    customfun={() => { setisClicked({ chat: !isClicked.chat }) }} color={currentColor}
                     icon={<BsChatLeft />} />
                 <NavButton
                     title='Notification'
                     dotColor="#03C9D7"
-                    customfun={() => handleClick('notification')} color="blue"
+                    customfun={() => { setisClicked({ notification: !isClicked.notification }) }} color={currentColor}
                     icon={<RiNotification3Line />} />
                 <TooltipComponent content="Profile" position='BottomCenter'>
-                    <div className='flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg' onClick={() => handleClick('userProfile')}>
+                    <div className='flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg' onClick={() => { setisClicked({ UserProfile: !isClicked.UserProfile }) }}>
                         <img src={avatar} className='rounded-full w-8 h-8' />
                         <p>
                             <span className='text-gray-400 text-14'>Hi,</span> {' '}
@@ -72,9 +72,10 @@ const Navbar = () => {
                 {isClicked.cart && <Cart />}
                 {isClicked.chat && <Chat />}
                 {isClicked.notification && <Notification />}
-                {isClicked.userProfile && <UserProfile />}
-            </div>
-        </div>
+                {/* {console.log(isClicked.userProfile)} */}
+                {isClicked.UserProfile && <UserProfile />}
+            </div >
+        </div >
     )
 }
 
