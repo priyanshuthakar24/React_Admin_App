@@ -3,6 +3,7 @@ import './App.css';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, RootLayout } from './pages';
+
 const App = () => {
     const router = createBrowserRouter([
         {

@@ -13,9 +13,13 @@
     "@syncfusion/ej2-react-popups": "^19.4.52",
     "@syncfusion/ej2-react-richtexteditor": "^19.4.50",
     "@syncfusion/ej2-react-schedule": "^19.4.50",
+    "gapi-script": "^1.2.0",
+    "googleapis": "^140.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-google-calendar-api": "^2.3.0",
     "react-icons": "^4.3.1",
+    "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.24.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
