@@ -1,8 +1,9 @@
 import React from 'react'
 import './App.css';
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, RootLayout } from './pages';
+import Map from './components/Map';
 
 const App = () => {
     const router = createBrowserRouter([
@@ -18,6 +19,7 @@ const App = () => {
                 { path: 'kanban', element: <Kanban /> },
                 { path: 'editor', element: <Editor /> },
                 { path: 'calendar', element: <Calendar /> },
+                { path: 'map', element: <Map /> },
                 { path: 'color-picker', element: <ColorPicker /> },
                 { path: 'line', element: <Line /> },
                 { path: 'area', element: <Area /> },

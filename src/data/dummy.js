@@ -10,6 +10,9 @@ import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
 import { GiLouvrePyramid } from 'react-icons/gi';
 import { GrLocation } from 'react-icons/gr';
+import { CiLocationOn } from "react-icons/ci";
+import { SlLocationPin } from "react-icons/sl";
+
 import avatar from './avatar.jpg';
 import avatar2 from './avatar2.jpg';
 import avatar3 from './avatar3.png';
@@ -44,22 +47,30 @@ export const gridOrderStatus = (props) => (
 );
 
 export const kanbanGrid = [
-  { headerText: 'To Do',
+  {
+    headerText: 'To Do',
     keyField: 'Open',
-    allowToggle: true },
+    allowToggle: true
+  },
 
-  { headerText: 'In Progress',
+  {
+    headerText: 'In Progress',
     keyField: 'InProgress',
-    allowToggle: true },
+    allowToggle: true
+  },
 
-  { headerText: 'Testing',
+  {
+    headerText: 'Testing',
     keyField: 'Testing',
     allowToggle: true,
-    isExpanded: false },
+    isExpanded: false
+  },
 
-  { headerText: 'Done',
+  {
+    headerText: 'Done',
     keyField: 'Close',
-    allowToggle: true },
+    allowToggle: true
+  },
 ];
 const gridEmployeeProfile = (props) => (
   <div className="flex items-center gap-2">
@@ -323,20 +334,26 @@ export const colorMappingData = [
 ];
 
 export const rangeColorMapping = [
-  { label: '1°C to 10°C',
+  {
+    label: '1°C to 10°C',
     start: '1',
     end: '10',
-    colors: colorMappingData[1] },
+    colors: colorMappingData[1]
+  },
 
-  { label: '11°C to 20°C',
+  {
+    label: '11°C to 20°C',
     start: '11',
     end: '20',
-    colors: colorMappingData[2] },
+    colors: colorMappingData[2]
+  },
 
-  { label: '21°C to 30°C',
+  {
+    label: '21°C to 30°C',
     start: '21',
     end: '30',
-    colors: colorMappingData[3] },
+    colors: colorMappingData[3]
+  },
 
 ];
 
@@ -393,38 +410,50 @@ export const LinePrimaryYAxis = {
 
 export const customersGrid = [
   { type: 'checkbox', width: '50' },
-  { headerText: 'Name',
+  {
+    headerText: 'Name',
     width: '150',
     template: customerGridImage,
-    textAlign: 'Center' },
-  { field: 'ProjectName',
+    textAlign: 'Center'
+  },
+  {
+    field: 'ProjectName',
     headerText: 'Project Name',
     width: '150',
-    textAlign: 'Center' },
-  { field: 'Status',
+    textAlign: 'Center'
+  },
+  {
+    field: 'Status',
     headerText: 'Status',
     width: '130',
     format: 'yMd',
     textAlign: 'Center',
-    template: customerGridStatus },
+    template: customerGridStatus
+  },
   {
     field: 'Weeks',
     headerText: 'Weeks',
     width: '100',
     format: 'C2',
-    textAlign: 'Center' },
-  { field: 'Budget',
+    textAlign: 'Center'
+  },
+  {
+    field: 'Budget',
     headerText: 'Budget',
     width: '100',
     format: 'yMd',
-    textAlign: 'Center' },
+    textAlign: 'Center'
+  },
 
-  { field: 'Location',
+  {
+    field: 'Location',
     headerText: 'Location',
     width: '150',
-    textAlign: 'Center' },
+    textAlign: 'Center'
+  },
 
-  { field: 'CustomerID',
+  {
+    field: 'CustomerID',
     headerText: 'Customer ID',
     width: '120',
     textAlign: 'Center',
@@ -434,39 +463,51 @@ export const customersGrid = [
 ];
 
 export const employeesGrid = [
-  { headerText: 'Employee',
+  {
+    headerText: 'Employee',
     width: '150',
     template: gridEmployeeProfile,
-    textAlign: 'Center' },
-  { field: 'Name',
+    textAlign: 'Center'
+  },
+  {
+    field: 'Name',
     headerText: '',
     width: '0',
     textAlign: 'Center',
   },
-  { field: 'Title',
+  {
+    field: 'Title',
     headerText: 'Designation',
     width: '170',
     textAlign: 'Center',
   },
-  { headerText: 'Country',
+  {
+    headerText: 'Country',
     width: '120',
     textAlign: 'Center',
-    template: gridEmployeeCountry },
+    template: gridEmployeeCountry
+  },
 
-  { field: 'HireDate',
+  {
+    field: 'HireDate',
     headerText: 'Hire Date',
     width: '135',
     format: 'yMd',
-    textAlign: 'Center' },
+    textAlign: 'Center'
+  },
 
-  { field: 'ReportsTo',
+  {
+    field: 'ReportsTo',
     headerText: 'Reports To',
     width: '120',
-    textAlign: 'Center' },
-  { field: 'EmployeeID',
+    textAlign: 'Center'
+  },
+  {
+    field: 'EmployeeID',
     headerText: 'Employee ID',
     width: '125',
-    textAlign: 'Center' },
+    textAlign: 'Center'
+  },
 ];
 
 export const links = [
@@ -483,6 +524,10 @@ export const links = [
   {
     title: 'Pages',
     links: [
+      {
+        name: 'map',
+        icon: <SlLocationPin />,
+      },
       {
         name: 'orders',
         icon: <AiOutlineShoppingCart />,
@@ -884,7 +929,8 @@ export const ordersGrid = [
     editType: 'dropdownedit',
     textAlign: 'Center',
   },
-  { field: 'CustomerName',
+  {
+    field: 'CustomerName',
     headerText: 'Customer Name',
     width: '150',
     textAlign: 'Center',
@@ -1490,7 +1536,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar3,
+      avatar3,
   },
   {
     EmployeeID: 2,
@@ -1560,7 +1606,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -1631,7 +1677,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar,
+      avatar,
   },
   {
     EmployeeID: 2,
@@ -1701,7 +1747,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -1772,7 +1818,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -1843,7 +1889,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -1914,7 +1960,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -1985,7 +2031,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -2056,7 +2102,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -2176,7 +2222,7 @@ export const ordersData = [
     Status: 'rejected',
     StatusBg: 'red',
     ProductImage:
-    product1,
+      product1,
   },
   {
     OrderID: 94757,
@@ -3092,29 +3138,35 @@ export const SparklineAreaData = [
 ];
 
 export const lineCustomSeries = [
-  { dataSource: lineChartData[0],
+  {
+    dataSource: lineChartData[0],
     xName: 'x',
     yName: 'y',
     name: 'Germany',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
-    type: 'Line' },
+    type: 'Line'
+  },
 
-  { dataSource: lineChartData[1],
+  {
+    dataSource: lineChartData[1],
     xName: 'x',
     yName: 'y',
     name: 'England',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
-    type: 'Line' },
+    type: 'Line'
+  },
 
-  { dataSource: lineChartData[2],
+  {
+    dataSource: lineChartData[2],
     xName: 'x',
     yName: 'y',
     name: 'India',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
-    type: 'Line' },
+    type: 'Line'
+  },
 
 ];
 
@@ -3177,7 +3229,8 @@ export const stackedChartData = [
 
 export const stackedCustomSeries = [
 
-  { dataSource: stackedChartData[0],
+  {
+    dataSource: stackedChartData[0],
     xName: 'x',
     yName: 'y',
     name: 'Budget',
@@ -3186,7 +3239,8 @@ export const stackedCustomSeries = [
 
   },
 
-  { dataSource: stackedChartData[1],
+  {
+    dataSource: stackedChartData[1],
     xName: 'x',
     yName: 'y',
     name: 'Expense',
@@ -5871,3 +5925,270 @@ export const PyramidData = [
   { x: 'Fruits', y: 520, text: '520 cal' },
   { x: 'Bread, Rice, Pasta', y: 930, text: '930 cal' },
 ];
+
+export const Citydata = [
+  {
+    "city": "Mumbai",
+    "admin": "Maharashtra",
+    "country": "India",
+    "population_proper": "12691836",
+    "iso2": "IN",
+    "capital": "admin",
+    "lat": "18.987807",
+    "lng": "72.836447",
+    "population": "18978000"
+  },
+  {
+    "city": "Delhi",
+    "admin": "Delhi",
+    "country": "India",
+    "population_proper": "7633213",
+    "iso2": "IN",
+    "capital": "admin",
+    "lat": "28.651952",
+    "lng": "77.231495",
+    "population": "15926000"
+  },
+  {
+    "city": "Kolkata",
+    "admin": "West Bengal",
+    "country": "India",
+    "population_proper": "4631392",
+    "iso2": "IN",
+    "capital": "admin",
+    "lat": "22.562627",
+    "lng": "88.363044",
+    "population": "14787000"
+  },
+  {
+    "city": "Chennai",
+    "admin": "Tamil Nadu ",
+    "country": "India",
+    "population_proper": "4328063",
+    "iso2": "IN",
+    "capital": "admin",
+    "lat": "13.084622",
+    "lng": "80.248357",
+    "population": "7163000"
+  },
+  {
+    "city": "Bengaluru",
+    "admin": "Karnataka",
+    "country": "India",
+    "population_proper": "5104047",
+    "iso2": "IN",
+    "capital": "admin",
+    "lat": "12.977063",
+    "lng": "77.587106",
+    "population": "6787000"
+  },
+  {
+    "city": "Hyderabad",
+    "admin": "Andhra Pradesh",
+    "country": "India",
+    "population_proper": "3597816",
+    "iso2": "IN",
+    "capital": "admin",
+    "lat": "17.384052",
+    "lng": "78.456355",
+    "population": "6376000"
+  },
+  {
+    "city": "Ahmadabad",
+    "admin": "Gujarat",
+    "country": "India",
+    "population_proper": "3719710",
+    "iso2": "IN",
+    "capital": "minor",
+    "lat": "23.025793",
+    "lng": "72.587265",
+    "population": "5375000"
+  },
+  {
+    "city": "Haora",
+    "admin": "West Bengal",
+    "country": "India",
+    "population_proper": "1027672",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "22.576882",
+    "lng": "88.318566",
+    "population": "4841638"
+  },
+  {
+    "city": "Pune",
+    "admin": "Maharashtra",
+    "country": "India",
+    "population_proper": "2935744",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "18.513271",
+    "lng": "73.849852",
+    "population": "4672000"
+  },
+  {
+    "city": "S\u016brat",
+    "admin": "Gujarat",
+    "country": "India",
+    "population_proper": "2894504",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "21.195944",
+    "lng": "72.830232",
+    "population": "3842000"
+  },
+  {
+    "city": "Mardanpur",
+    "admin": "Uttar Pradesh",
+    "country": "India",
+    "population_proper": "2823249",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "26.430066",
+    "lng": "80.267176",
+    "population": "3162000"
+  },
+  {
+    "city": "Rampura",
+    "admin": "Rajasthan",
+    "country": "India",
+    "population_proper": "2711758",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "26.884682",
+    "lng": "75.789336",
+    "population": "2917000"
+  },
+  {
+    "city": "Lucknow",
+    "admin": "Uttar Pradesh",
+    "country": "India",
+    "population_proper": "2472011",
+    "iso2": "IN",
+    "capital": "admin",
+    "lat": "26.839281",
+    "lng": "80.923133",
+    "population": "2695000"
+  },
+  {
+    "city": "Nara",
+    "admin": "Maharashtra",
+    "country": "India",
+    "population_proper": "2228018",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "21.203096",
+    "lng": "79.089284",
+    "population": "2454000"
+  },
+  {
+    "city": "Patna",
+    "admin": "Bihar",
+    "country": "India",
+    "population_proper": "1599920",
+    "iso2": "IN",
+    "capital": "admin",
+    "lat": "25.615379",
+    "lng": "85.101027",
+    "population": "2158000"
+  },
+  {
+    "city": "Indore",
+    "admin": "Madhya Pradesh",
+    "country": "India",
+    "population_proper": "1837041",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "22.717736",
+    "lng": "75.85859",
+    "population": "2026000"
+  },
+  {
+    "city": "Vadodara",
+    "admin": "Gujarat",
+    "country": "India",
+    "population_proper": "1409476",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "22.299405",
+    "lng": "73.208119",
+    "population": "1756000"
+  },
+  {
+    "city": "Bhopal",
+    "admin": "Madhya Pradesh",
+    "country": "India",
+    "population_proper": "1599914",
+    "iso2": "IN",
+    "capital": "admin",
+    "lat": "23.254688",
+    "lng": "77.402892",
+    "population": "1727000"
+  },
+  {
+    "city": "Coimbatore",
+    "admin": "Tamil Nadu ",
+    "country": "India",
+    "population_proper": "959823",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "11.005547",
+    "lng": "76.966122",
+    "population": "1696000"
+  },
+  {
+    "city": "Ludhiana",
+    "admin": "Punjab",
+    "country": "India",
+    "population_proper": "1545368",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "30.912042",
+    "lng": "75.853789",
+    "population": "1649000"
+  },
+  {
+    "city": "\u0100gra",
+    "admin": "Uttar Pradesh",
+    "country": "India",
+    "population_proper": "1430055",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "27.187935",
+    "lng": "78.003944",
+    "population": "1592000"
+  },
+  {
+    "city": "Kalyan",
+    "admin": "Maharashtra",
+    "country": "India",
+    "population_proper": "1576614",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "19.243703",
+    "lng": "73.135537",
+    "population": "1576614"
+  },
+  {
+    "city": "Vishakhapatnam",
+    "admin": "Andhra Pradesh",
+    "country": "India",
+    "population_proper": "1063178",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "17.704052",
+    "lng": "83.297663",
+    "population": "1529000"
+  },
+  {
+    "city": "Kochi",
+    "admin": "Kerala",
+    "country": "India",
+    "population_proper": "604696",
+    "iso2": "IN",
+    "capital": "",
+    "lat": "9.947743",
+    "lng": "76.253802",
+    "population": "1519000"
+  }
+]
