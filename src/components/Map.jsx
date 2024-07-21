@@ -1,9 +1,10 @@
 // import L from 'leaflet'
+import React, { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css'
 import './map.css';
 import L from "leaflet";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import { Citydata } from '../data/dummy';
+import { MapContainer, TileLayer, Marker, Popup, useMap, Polyline } from 'react-leaflet';
+import { Citydata, Citycords } from '../data/dummy';
 import useCurrentLocation from '../hooks/useCurrentLocation';
 import Button from './Button';
 
@@ -24,8 +25,8 @@ const CurrentLocationButton = ({ coordinates, zoomLevel }) => {
     };
 
     return <button button onClick={handleClick} style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 1000 }
-    }> <Button icon={<MdMyLocation />} bgColor={currentColor} borderRadius='50%' color='white' 
-    size='3xl' /></button >
+    }> <Button icon={<MdMyLocation />} bgColor={currentColor} borderRadius='50%' color='white'
+        size='3xl' /></button >
 };
 
 // marker icon ------
@@ -39,7 +40,14 @@ const markerIcon = new L.Icon({
 // main function -----
 export default function LeafletContainer() {
     const { isLoading, coordinates } = useCurrentLocation();
-
+    const [locationHistory, setLocationHistory] = useState([]);
+    console.log(locationHistory)
+    const { currentColor } = useStateContext();
+    useEffect(() => {
+        if (!isLoading) {
+            setLocationHistory((prevHistory) => [...prevHistory, coordinates]);
+        }
+    }, [coordinates, isLoading]);
     if (isLoading) {
         return <div>Loading...</div>;
     }
@@ -56,8 +64,18 @@ export default function LeafletContainer() {
                         </b>
                     </Popup>
                 </Marker>
-
-                {/* <Marker position={centerl} icon={markerIcon}></Marker> */}
+                {locationHistory.length > 1 && (
+                    <Polyline positions={locationHistory} color='blue' />
+                )}
+                {locationHistory.map((loc, idx) => (
+                    <Marker key={idx} position={[loc.lat, loc.lng]} icon={markerIcon} />
+                ))}
+                {Citycords.length > 1 && (
+                    <Polyline positions={Citycords} color='blue' />
+                )}
+                {Citycords.map((loc, idx) => (
+                    <Marker key={idx} position={[loc.lat, loc.lng]} icon={markerIcon} />
+                ))}
                 {Citydata.map((city, idx) => (
                     <Marker
                         position={[city.lat, city.lng]}

@@ -6192,3 +6192,10 @@ export const Citydata = [
     "population": "1519000"
   }
 ]
+
+export const Citycords = [
+  { lat: 9.947743, lng: 76.253802 },
+  { lat: 17.704052, lng: 83.297663 },
+  { lat: 19.243703, lng: 73.135537 },
+  { lat: 27.187935, lng: 78.003944 },
+]

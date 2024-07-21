@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from 'react';
 const useCurrentLocation = () => {
     const [location, setLocation] = useState({
         isLoading: true,
@@ -15,23 +14,26 @@ const useCurrentLocation = () => {
             return;
         }
 
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                setLocation({
-                    isLoading: false,
-                    coordinates: {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude,
-                    },
-                });
-            },
-            () => {
-                setLocation((prevState) => ({
-                    ...prevState,
-                    isLoading: false,
-                }));
-            }
-        );
+        const handlePosition = (position) => {
+            const { latitude, longitude } = position.coords;
+            setLocation({
+                isLoading: false,
+                coordinates: { lat: latitude, lng: longitude },
+            });
+        };
+
+        const errorCallback = () => {
+            setLocation((prevState) => ({
+                ...prevState,
+                isLoading: false,
+            }));
+        };
+
+        const watchId = navigator.geolocation.watchPosition(handlePosition, errorCallback);
+
+        return () => {
+            navigator.geolocation.clearWatch(watchId);
+        };
     }, []);
 
     return location;
