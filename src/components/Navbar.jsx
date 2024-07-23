@@ -9,6 +9,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import avatar from '../data/avatar.jpg';
 import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../contexts/ContextProvider';
+import { useAuth } from '../contexts/AuthContext';
 
 // Navbutton dynamic components to show  the chat cart profile button 
 const NavButton = ({ title, customfun, icon, color, dotColor }) => (
@@ -22,7 +23,7 @@ const Navbar = () => {
 
     // context calling 
     const { activeMenu, setActiveMenu, isClicked, setisClicked, handleClick, screenSize, setScreenSize, currentColor, user, setuser } = useStateContext();
-
+    const { userData } = useAuth()
     // useEffect calling for calculating the size  of the window 
     useEffect(() => {
         const handleResize = () => setScreenSize(window.innerWidth)
@@ -64,7 +65,7 @@ const Navbar = () => {
                         <img src={avatar} className='rounded-full w-8 h-8' />
                         <p>
                             <span className='text-gray-400 text-14'>Hi,</span> {' '}
-                            <span className='text-gray-400 font-bold ml-1 text-14'>Pinku</span>
+                            <span className='text-gray-400 font-bold ml-1 text-14'>{userData.name}</span>
                         </p>
                         <MdKeyboardArrowDown className='text-gray-400 text-14' />
                     </div>

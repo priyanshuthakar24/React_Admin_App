@@ -529,6 +529,10 @@ export const links = [
         icon: <SlLocationPin />,
       },
       {
+        name: 'timeline',
+        icon: <SlLocationPin />,
+      },
+      {
         name: 'orders',
         icon: <AiOutlineShoppingCart />,
       },

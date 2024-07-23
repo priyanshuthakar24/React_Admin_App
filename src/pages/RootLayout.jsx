@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import { Navbar, Footer, Sidebar, ThemeSettings } from '../components';
+import { Navbar, Footer, Sidebar, ThemeSettings, Login } from '../components';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { FiSettings } from 'react-icons/fi'
 import { useStateContext } from '../contexts/ContextProvider';

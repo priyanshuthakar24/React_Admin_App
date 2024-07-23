@@ -4,15 +4,17 @@ import './index.css';
 import App from './App';
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
 import { ContextProvider } from './contexts/ContextProvider';
-
+import { AuthProvider } from './contexts/AuthContext'
 // import reportWebVitals from './reportWebVitals';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <ContextProvider>
-        <App />
-    </ContextProvider>
+    <AuthProvider>
+        <ContextProvider>
+            <App />
+        </ContextProvider>
+    </AuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

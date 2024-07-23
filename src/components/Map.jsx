@@ -71,7 +71,7 @@ export default function LeafletContainer() {
                     <Marker key={idx} position={[loc.lat, loc.lng]} icon={markerIcon} />
                 ))}
                 {Citycords.length > 1 && (
-                    <Polyline positions={Citycords} color='blue' />
+                    <Polyline positions={Citycords} color={currentColor} />
                 )}
                 {Citycords.map((loc, idx) => (
                     <Marker key={idx} position={[loc.lat, loc.lng]} icon={markerIcon} />

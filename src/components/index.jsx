@@ -13,3 +13,7 @@ export { default as Stacked } from './Charts/Stacked';
 export { default as Pie } from './Charts/Pie';
 export { default as ChartsHeader } from './ChartsHeader';
 export { default as Header } from './Header';
+export { default as Map } from './Map';
+export { default as TimeLine } from './TimeLine';
+export { default as Signup } from './Signup';
+export { default as Login } from './Login';

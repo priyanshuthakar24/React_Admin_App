@@ -19,18 +19,19 @@ const Cart = () => {
             <div className="float-right h-screen  duration-1000 ease-in-out dark:text-gray-200 transition-all dark:bg-[#484B52] bg-white md:w-400 p-8">
                 <div className="flex justify-between items-center">
                     <p className="font-semibold text-lg">Shopping Cart</p>
-                    {/* <button
+                    <Button
                         icon={<MdOutlineCancel />}
                         color={currentColor}
                         bgHoverColor="light-gray"
                         size="2xl"
                         borderRadius="50%"
-                    /> */}
+                        cusfunc={() => { setisClicked({ Cart: !isClicked.Cart }) }}
+                    />
                     {/* <button type='button' onClick={() => { ((prevActiveMenu) => !prevActiveMenu) }} className='text-xl rounded-full p-3 hover:bg-light-gray  block ' ><MdOutlineCancel /></button> */}
-                    <NavButton
+                    {/* <NavButton
                         title='Cart'
                         customfun={() => setisClicked({ cart: !isClicked.cart })} color={currentColor}
-                        icon={<MdOutlineCancel />} />
+                        icon={<MdOutlineCancel />} /> */}
                 </div>
                 {cartData?.map((item, index) => (
                     <div key={index}>
